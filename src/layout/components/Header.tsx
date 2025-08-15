@@ -1,5 +1,5 @@
 import { memo, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 // img
 import LogoMovie from "../../shared/assets/LogoMovie.svg"
@@ -12,13 +12,15 @@ import Menu from "../../shared/assets/more.png"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   return (
     <div className="Header relative">
       <header className='w-full h-[70px] bg-[#000000]'>
         <nav className="container h-[70px] w-full flex items-center justify-between">
           <div>
-            <img className="w-[112px] h-[36px]" src={LogoMovie} alt="Logo" />
+            <img onClick={() => navigate("/")} className="w-[112px] h-[36px] cursor-pointer" src={LogoMovie} alt="Logo" />
           </div>
 
           <ul className={`text-[#A1A1A1] flex gap-[30px] ml-[150px] max-[590px]:hidden`}>
