@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { Suspense, type ReactNode } from "react"
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 import { store } from "./store"
@@ -11,7 +11,9 @@ const AppProvider = ({children}:{children: ReactNode}) => {
     <BrowserRouter>
       <Provider store={store}>
         <QueryClientProvider client={client}>
-          {children}
+          <Suspense fallback={<div className="bg-black w-[100%] h-[100vh] text-red-800 font-bold text-[60px] text-center pt-[300px]">Movie</div>}>
+            {children}
+          </Suspense>
         </QueryClientProvider>
       </Provider>
     </BrowserRouter>
