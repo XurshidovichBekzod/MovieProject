@@ -20,10 +20,7 @@ const Carousel = () => {
     if (isLoading) return <div>Loading...</div>;
     if (isError || !data) return <div>API error!</div>;
 
-    const movies = (data.results ?? [])
-        .filter((m: any) => m.backdrop_path && m.poster_path)
-        .slice(0, 10);
-
+    const movies = (data.results ?? []).filter((m: any) => m.backdrop_path && m.poster_path).slice(6, 16);
     return (
         <div className="mx-auto max-w-[1200px] px-4 mb-[100px]">
             <Swiper
@@ -41,8 +38,7 @@ const Carousel = () => {
                         <img
                             className="w-full h-full object-cover block"
                             src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-                            alt={movie.title || movie.original_title}
-                            loading="lazy"
+                            alt={movie.title}
                         />
                     </SwiperSlide>
                 ))}
