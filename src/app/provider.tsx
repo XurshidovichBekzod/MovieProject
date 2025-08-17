@@ -11,7 +11,7 @@ const AppProvider = ({children}:{children: ReactNode}) => {
     <BrowserRouter>
       <Provider store={store}>
         <QueryClientProvider client={client}>
-          <Suspense fallback={<div className="bg-black w-[100%] h-[100vh] text-red-800 font-bold text-[60px] text-center pt-[300px]">Movie</div>}>
+          <Suspense fallback={<div className="bg-black w-[100%] h-[100vh] text-red-800 font-bold text-[60px] text-center pt-[300px]"></div>}>
             {children}
           </Suspense>
         </QueryClientProvider>

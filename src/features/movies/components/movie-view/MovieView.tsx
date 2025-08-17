@@ -1,5 +1,6 @@
 import { memo, type FC } from "react";
 import { useNavigate } from "react-router-dom";
+import Image from "../../../../shared/components/image/Image";
 
 interface Props {
   data: any[] | undefined;
@@ -15,7 +16,7 @@ const MovieView: FC<Props> = ({ data }) => {
       {data?.map((movie: any) => (
         <div key={movie.id} onClick={() => navigate(`/movie/${movie.id}`)}>
             <div>
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" />
+                <Image height={300} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
             </div>
             <div className="p-2">
                 <h3 className="font-bold line-clamp-1" title={movie.title}>{movie.title}</h3>
