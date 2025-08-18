@@ -54,12 +54,11 @@ const MovieDetail = () => {
       </div>
       <div className="container mt-[75px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {
-          personInformation?.cast?.map((item: any, index: number) => {
+          personInformation?.cast?.map((item: any) => {
             const img = item.profile_path ? `https://image.tmdb.org/t/p/original${item.profile_path}` : imageDefoult;
             return (
-              <div
-                key={index} className="w-[260px] h-[160px] bg-[#303030] text-white p-[10px] gap-[10px] flex rounded-[12px]">
-                <img className="w-[150px] h-[130px] rounded-[12px] object-cover" src={img} alt={item.original_name} />
+              <div key={item.id} className="w-[260px] h-[160px] bg-[#303030] text-white p-[10px] gap-[10px] flex rounded-[12px]">
+                <img onClick={() => navigate(`/cast/${item.id}`)} className="w-[150px] h-[130px] rounded-[12px] object-cover" src={img} alt={item.original_name} />
                 <h1 className="line-clamp-1">{item.original_name}</h1>
               </div>
             )

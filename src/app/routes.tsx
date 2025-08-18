@@ -1,5 +1,6 @@
 import React, { lazy } from "react";
 import { useRoutes } from "react-router-dom";
+import CastDetail from "../features/cast/pages/CastDetail";
 
 const MainLayout = lazy(()=> import("../layout/MainLayout"))
 const Home = lazy(()=> import("../features/home/pages/Home"))
@@ -17,6 +18,7 @@ const AppRoutes = () => {
           {path:"bookmark", element:<Bookmark/> },
           {path:"movies", element:<Movies/> },
           {path:"movie/:id", element:<MovieDetail/> },
+          {path:"cast/:id", element:<CastDetail/> },
         ]
     }
   ]);
