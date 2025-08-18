@@ -11,7 +11,7 @@ const Home = () => {
     <div className="Home">
       <h2>Home</h2>
       <Carousel/>
-      <MovieView data={data?.results}/>
+      <MovieView data={data?.results.slice(0,8)}/>
     </div>
   );
 };
