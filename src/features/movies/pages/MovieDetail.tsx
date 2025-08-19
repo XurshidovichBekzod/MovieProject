@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useMovie } from "../service/useMovie";
 import MovieView from "../components/movie-view/MovieView";
@@ -17,6 +17,9 @@ const MovieDetail = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { Suspense, type ReactNode } from "react"
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
-import { store } from "./store"
+import { store } from "../shared/lib/redux/index"
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 
 const client = new QueryClient()

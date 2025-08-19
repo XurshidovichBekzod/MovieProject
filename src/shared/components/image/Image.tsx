@@ -19,10 +19,7 @@ const Image: FC<Props> = ({ src, alt = "", className = "", height }) => {
         alt={alt}
       />
       {loading && (
-        <div
-          style={{ height: height + "px" }}
-          className="w-full bg-[#303030]"
-        ></div>
+        <div style={{ height: height + "px" }} className="w-full bg-[#303030]"></div>
       )}
     </div>
   )

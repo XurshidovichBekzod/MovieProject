@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useCast from '../service/useCast';
 import MovieView from '../../movies/components/movie-view/MovieView';
@@ -11,6 +11,12 @@ const CastDetail = () => {
   const { data: moviesData } = getCastByIdInfo(Number(id), "movie_credits");
 
   const images = data?.profile_path ? `https://image.tmdb.org/t/p/original${data.profile_path}`: imageDefoult;
+
+  
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
+  
 
   return (
     <>
