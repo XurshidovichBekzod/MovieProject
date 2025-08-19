@@ -76,7 +76,7 @@ const Header = () => {
         </nav>
 
         {isMenuOpen && (
-          <div className="absolute top-[70px] left-0 w-full bg-[#000] text-white  flex-col items-center gap-4 py-4 max-[590px]:flex hidden">
+          <div className="absolute z-20 top-[70px] left-0 w-full bg-[#000] text-white  flex-col items-center gap-4 py-4 max-[590px]:flex hidden">
             <NavLink to={"/"} onClick={() => setIsMenuOpen(false)}>Афиша</NavLink>
             <NavLink to={"movies"} onClick={() => setIsMenuOpen(false)}>Сеансы</NavLink>
             <NavLink to={"bookmark"} onClick={() => setIsMenuOpen(false)}>Билеты</NavLink>

@@ -21,7 +21,7 @@ const Bookmark = () => {
             <Image height={480} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
             <h3 className='line-clamp-1'>{movie.title}</h3>
             <p>⭐ {movie.vote_average}</p>
-            <button onClick={() => dispatch(toggleWishlist(movie))} className="border-[0px] bg-red-800 w-[100%] h-[30px] rounded-[2px] text-white">like</button>
+            <button onClick={() => dispatch(toggleWishlist(movie))} className="border-[0px] bg-red-800 w-[100%] h-[30px] rounded-[2px] text-white">Unlike</button>
           </div>
         ))}
       </div>
