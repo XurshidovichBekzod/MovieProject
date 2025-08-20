@@ -10,7 +10,7 @@ const Movies = () => {
   const page = params.get("page") || "1"
 
   const { getMovies } = useMovie()
-  const { data } = getMovies({page})
+  const { data } = getMovies({ page })
 
 
   const handlechange = (value: number) => {
@@ -22,8 +22,15 @@ const Movies = () => {
     <div className="Movies">
       <h2>Movies</h2>
       <MovieView data={data?.results} />
-      <div className="flex justify-center bg-white container">
-        <Pagination onChange={handlechange} total={data?.total_pages} showSizeChanger={false} showPrevNextJumpers={false} defaultPageSize={1}/>
+      <div className="flex justify-center  container mt-[40px]">
+        <Pagination
+          onChange={handlechange}
+          total={data?.total_pages}
+          showSizeChanger={false}
+          showPrevNextJumpers={false}
+          defaultPageSize={1}
+          className="bg-gray-100 p-3 rounded-xl shadow-md text-red-800"
+        />
       </div>
     </div>
   );
