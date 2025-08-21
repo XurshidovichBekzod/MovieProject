@@ -29,7 +29,7 @@ const Movies = () => {
           showSizeChanger={false}
           showPrevNextJumpers={false}
           defaultPageSize={1}
-          className="bg-gray-100 p-3 rounded-xl shadow-md text-red-800"
+          className="bg-white rounded-[12px]"
         />
       </div>
     </div>

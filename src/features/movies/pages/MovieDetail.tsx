@@ -95,7 +95,6 @@ const MovieDetail = () => {
         })}
       </div>
 
-      {/* Similar movies */}
       <div className="mt-[50px] sm:mt-[100px]">
         <MovieView data={similarData?.results?.slice(0, 8)} />
       </div>
