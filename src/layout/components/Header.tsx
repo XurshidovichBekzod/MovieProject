@@ -49,7 +49,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"bookmark"}>
+              <NavLink to={"search"}>
                 <div>
                   <img className="flex mx-auto w-[24px] h-[24px]" src={LogoNavbarSe} alt="" />
                   <p>Поиск</p>

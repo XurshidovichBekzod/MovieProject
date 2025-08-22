@@ -30,3 +30,33 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.ant-input {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border: 1px solid #333;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  width: 600px;
+}
+
+.ant-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.ant-input:hover {
+  border-color: red;
+  background-color: #1a1a1a !important;
+}
+
+.ant-input:focus {
+  border-color: red;
+  background-color: #1a1a1a;
+}
+
+.ant-input[disabled] {
+  background-color: #0d0d0d;
+  color: rgba(255, 255, 255, 0.3);
+  border-color: #1a1a1a;
+  margin-left: 100px;
+}
