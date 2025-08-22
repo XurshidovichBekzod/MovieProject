@@ -1,12 +1,15 @@
-import { Input } from 'antd'
+import { Input, Spin } from 'antd'
 import { useState } from 'react'
 import { useSearch } from '../service/useSearch'
 import MovieView from '../../movies/components/movie-view/MovieView'
+import useDebounce from '../../../shared/hooks/useDebounce'
 
 const Search = () => {
   const [value, setValue] = useState("")
+  const debouncedValue = useDebounce(value, 1000)
+
   const { getMoviesBySearch } = useSearch()
-  const { data } = getMoviesBySearch({ query: value })
+  const { data, isLoading } = getMoviesBySearch({ query: debouncedValue })
 
   return (
     <div className='container'>
@@ -21,11 +24,19 @@ const Search = () => {
       </div>
 
       <div className="flex justify-center">
-        {value.trim() === "" ? (
-          // agar input bo‘sh bo‘lsa rasm chiqadi
-          <h1 className='text-white'>🔍 Start typing to search...</h1>
+        {debouncedValue.trim() === "" ? (
+          <h1 className='text-[#677282] mt-[30px] text-[17px] mb-[160px]'>
+            Start typing to search...
+          </h1>
+        ) : isLoading ? (
+          <div className='mb-[183px]'>
+            <Spin size="large" className="mt-[50px]" />
+          </div>
+        ) : data?.results?.length === 0 ? (
+          <h1 className='text-[#677282] mt-[30px] text-[17px] mb-[160px]'>
+            Nothing found for “{debouncedValue}”
+          </h1>
         ) : (
-          // agar qidiruv bo‘lsa MovieView chiqadi
           <MovieView data={data?.results} />
         )}
       </div>
@@ -34,3 +45,4 @@ const Search = () => {
 }
 
 export default Search
+
