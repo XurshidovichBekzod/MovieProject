@@ -80,7 +80,7 @@ const Header = () => {
             <NavLink to={"/"} onClick={() => setIsMenuOpen(false)}>Афиша</NavLink>
             <NavLink to={"movies"} onClick={() => setIsMenuOpen(false)}>Сеансы</NavLink>
             <NavLink to={"bookmark"} onClick={() => setIsMenuOpen(false)}>Билеты</NavLink>
-            <NavLink to={"bookmark"} onClick={() => setIsMenuOpen(false)}>Поиск</NavLink>
+            <NavLink to={"search"} onClick={() => setIsMenuOpen(false)}>Поиск</NavLink>
             <button className="w-[82px] bg-[#0E0E0E] rounded-[12px] h-[47px]">Ру</button>
             <button className="w-[130px] bg-[#C61F1F] rounded-[12px] h-[47px]">Войти</button>
           </div>
